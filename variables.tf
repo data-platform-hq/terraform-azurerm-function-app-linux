@@ -52,6 +52,7 @@ variable "java_version" {
 }
 
 variable "ip_restriction" {
+  description = "Firewall settings for the function app"
   type = list(object({
     name                      = string
     ip_address                = string
