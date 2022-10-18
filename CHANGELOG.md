@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.2.0...v1.2.1) (2022-10-18)
+
+
+### Bug Fixes
+
+* fix condition ([70ce98b](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/70ce98be3ab81d72fa2babec8fa39436c497aabd))
+
 # [1.2.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.1.0...v1.2.0) (2022-10-18)
 
 
