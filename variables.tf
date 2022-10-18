@@ -85,3 +85,9 @@ variable "app_settings" {
   default     = {}
   description = "Application setting"
 }
+
+variable "azure_rbac" {
+  type        = list(map(string))
+  description = "Azure RBAC permision map (scope, role)"
+  default     = []
+}

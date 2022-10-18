@@ -52,6 +52,13 @@ resource "azurerm_linux_function_app" "this" {
   }
 }
 
+resource "azurerm_role_assignment" "storage" {
+  for_each             = { for permision in var.azure_rbac : "${permision.scope}-${permision.role}" => permision }
+  scope                = each.value.scope
+  role_definition_name = each.value.role
+  principal_id         = azurerm_linux_function_app.this.identity[0].principal_id
+}
+
 data "azurerm_function_app_host_keys" "this" {
   depends_on          = [azurerm_linux_function_app.this]
   name                = azurerm_linux_function_app.this.name
