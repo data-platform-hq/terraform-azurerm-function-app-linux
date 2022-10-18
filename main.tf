@@ -59,6 +59,12 @@ resource "azurerm_role_assignment" "storage" {
   principal_id         = azurerm_linux_function_app.this.identity[0].principal_id
 }
 
+resource "azurerm_app_service_virtual_network_swift_connection" "this" {
+  count          = var.use_private_net == null ? 0 : 1
+  app_service_id = azurerm_linux_function_app.this.id
+  subnet_id      = var.subnet_id
+}
+
 data "azurerm_function_app_host_keys" "this" {
   depends_on          = [azurerm_linux_function_app.this]
   name                = azurerm_linux_function_app.this.name

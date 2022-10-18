@@ -91,3 +91,15 @@ variable "azure_rbac" {
   description = "Azure RBAC permision map (scope, role)"
   default     = []
 }
+
+variable "subnet_id" {
+  type        = string
+  description = "Subnet ID for the function app"
+  default     = null
+}
+
+variable "use_private_net" {
+  type        = bool
+  description = "Use private network injection"
+  default     = false
+}
