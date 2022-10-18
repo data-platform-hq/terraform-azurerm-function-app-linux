@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.0.0...v1.1.0) (2022-10-18)
+
+
+### Features
+
+* add permission management ([bbfb4e3](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/bbfb4e342f444652dcedf4d25bd59b2128bf1bca))
+* add permission management ([2163d46](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/2163d46a44e4880e4a8e2fd6b0006efced1d48a8))
+
 # 1.0.0 (2022-09-29)
 
 
