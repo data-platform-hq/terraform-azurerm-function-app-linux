@@ -60,7 +60,7 @@ resource "azurerm_role_assignment" "storage" {
 }
 
 resource "azurerm_app_service_virtual_network_swift_connection" "this" {
-  count          = var.use_private_net == null ? 0 : 1
+  count          = var.use_private_net ? 1 : 0
   app_service_id = azurerm_linux_function_app.this.id
   subnet_id      = var.subnet_id
 }
