@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.1.0...v1.2.0) (2022-10-18)
+
+
+### Features
+
+* add private vnet injection ([c97f855](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/c97f855b808602d51724f0dea766465d30ee06b6))
+
 # [1.1.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.0.0...v1.1.0) (2022-10-18)
 
 
