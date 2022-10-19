@@ -50,6 +50,14 @@ resource "azurerm_linux_function_app" "this" {
       java_version = var.java_version
     }
   }
+  lifecycle {
+    ignore_changes = [
+      tags["hidden-link: /app-insights-conn-string"],
+      tags["hidden-link: /app-insights-instrumentation-key"],
+      tags["hidden-link: /app-insights-resource-id"],
+      virtual_network_subnet_id
+    ]
+  }
 }
 
 resource "azurerm_role_assignment" "storage" {

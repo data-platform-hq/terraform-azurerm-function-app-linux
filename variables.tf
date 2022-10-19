@@ -48,7 +48,7 @@ variable "application_type" {
 variable "java_version" {
   type        = string
   description = "Java version"
-  default     = "8"
+  default     = "11"
 }
 
 variable "ip_restriction" {
