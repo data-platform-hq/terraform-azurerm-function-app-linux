@@ -30,6 +30,7 @@ No modules.
 | [azurerm_linux_function_app.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_function_app) | resource |
 | [azurerm_role_assignment.storage](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
 | [azurerm_function_app_host_keys.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/function_app_host_keys) | data source |
+| [azurerm_function_app_host_keys.this_vnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/function_app_host_keys) | data source |
 
 ## Inputs
 
@@ -40,7 +41,7 @@ No modules.
 | <a name="input_azure_rbac"></a> [azure\_rbac](#input\_azure\_rbac) | Azure RBAC permision map (scope, role) | `list(map(string))` | `[]` | no |
 | <a name="input_env"></a> [env](#input\_env) | Environment | `string` | n/a | yes |
 | <a name="input_ip_restriction"></a> [ip\_restriction](#input\_ip\_restriction) | Firewall settings for the function app | <pre>list(object({<br>    name                      = string<br>    ip_address                = string<br>    service_tag               = string<br>    virtual_network_subnet_id = string<br>    priority                  = string<br>    action                    = string<br>    headers = list(object({<br>      x_azure_fdid      = list(string)<br>      x_fd_health_probe = list(string)<br>      x_forwarded_for   = list(string)<br>      x_forwarded_host  = list(string)<br>    }))<br>  }))</pre> | <pre>[<br>  {<br>    "action": "Allow",<br>    "headers": null,<br>    "ip_address": null,<br>    "name": "allow_azure",<br>    "priority": "100",<br>    "service_tag": "AzureCloud",<br>    "virtual_network_subnet_id": null<br>  }<br>]</pre> | no |
-| <a name="input_java_version"></a> [java\_version](#input\_java\_version) | Java version | `string` | `"8"` | no |
+| <a name="input_java_version"></a> [java\_version](#input\_java\_version) | Java version | `string` | `"11"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Location | `string` | n/a | yes |
 | <a name="input_log_storage_name"></a> [log\_storage\_name](#input\_log\_storage\_name) | Logs storage account name | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Function index/name (like 007) | `string` | n/a | yes |
@@ -57,6 +58,7 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | Function app ID |
 | <a name="output_identity"></a> [identity](#output\_identity) | Function app Managed Identity |
+| <a name="output_outbound_ip_address_list"></a> [outbound\_ip\_address\_list](#output\_outbound\_ip\_address\_list) | Function app outbound IP address list |
 | <a name="output_primary_key"></a> [primary\_key](#output\_primary\_key) | Function app primary key |
 <!-- END_TF_DOCS -->
 
