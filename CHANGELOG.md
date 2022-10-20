@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.3.0...v1.3.1) (2022-10-20)
+
+
+### Bug Fixes
+
+* fix primary key output ([b7409dd](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/b7409ddce89682b39d074ddf330d85d306e7b278))
+
 # [1.3.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.2.1...v1.3.0) (2022-10-19)
 
 
