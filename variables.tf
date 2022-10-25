@@ -48,7 +48,7 @@ variable "application_type" {
 variable "application_stack" {
   type        = map(string)
   description = "Application stack"
-  default     = {
+  default = {
     java_version = "11"
   }
 }
