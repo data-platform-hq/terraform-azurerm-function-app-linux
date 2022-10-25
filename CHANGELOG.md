@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.3.1...v1.4.0) (2022-10-25)
+
+
+### Bug Fixes
+
+* format document ([2f30278](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/2f3027835d7103d7aff16a82e7336b63c2f14ad7))
+* update output ([049385c](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/049385c900643677f350ec9a04fcd680878c1f9a))
+
+
+### Features
+
+* configure application stack ([2e67c8c](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/2e67c8ca7a9e6f60b66a1f5fc270823db946972a))
+
 ## [1.3.1](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.3.0...v1.3.1) (2022-10-20)
 
 
