@@ -45,10 +45,12 @@ variable "application_type" {
   default     = "java"
 }
 
-variable "java_version" {
-  type        = string
-  description = "Java version"
-  default     = "11"
+variable "application_stack" {
+  type        = map(string)
+  description = "Application stack"
+  default     = {
+    java_version = "11"
+  }
 }
 
 variable "ip_restriction" {
