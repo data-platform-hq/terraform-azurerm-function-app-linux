@@ -37,11 +37,11 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_app_settings"></a> [app\_settings](#input\_app\_settings) | Application setting | `map(string)` | `{}` | no |
+| <a name="input_application_stack"></a> [application\_stack](#input\_application\_stack) | Application stack | `map(string)` | <pre>{<br>  "java_version": "11"<br>}</pre> | no |
 | <a name="input_application_type"></a> [application\_type](#input\_application\_type) | Application type (java, python, etc) | `string` | `"java"` | no |
 | <a name="input_azure_rbac"></a> [azure\_rbac](#input\_azure\_rbac) | Azure RBAC permision map (scope, role) | `list(map(string))` | `[]` | no |
 | <a name="input_env"></a> [env](#input\_env) | Environment | `string` | n/a | yes |
 | <a name="input_ip_restriction"></a> [ip\_restriction](#input\_ip\_restriction) | Firewall settings for the function app | <pre>list(object({<br>    name                      = string<br>    ip_address                = string<br>    service_tag               = string<br>    virtual_network_subnet_id = string<br>    priority                  = string<br>    action                    = string<br>    headers = list(object({<br>      x_azure_fdid      = list(string)<br>      x_fd_health_probe = list(string)<br>      x_forwarded_for   = list(string)<br>      x_forwarded_host  = list(string)<br>    }))<br>  }))</pre> | <pre>[<br>  {<br>    "action": "Allow",<br>    "headers": null,<br>    "ip_address": null,<br>    "name": "allow_azure",<br>    "priority": "100",<br>    "service_tag": "AzureCloud",<br>    "virtual_network_subnet_id": null<br>  }<br>]</pre> | no |
-| <a name="input_java_version"></a> [java\_version](#input\_java\_version) | Java version | `string` | `"11"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Location | `string` | n/a | yes |
 | <a name="input_log_storage_name"></a> [log\_storage\_name](#input\_log\_storage\_name) | Logs storage account name | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Function index/name (like 007) | `string` | n/a | yes |

@@ -17,6 +17,16 @@ locals {
     AzureWebJobsDisableHomepage         = "true"
     AzureFunctionsWebHost__hostid       = substr(azurerm_application_insights.this.name, -32, -1)
   }
+  application_stack_struct = {
+    dotnet_version              = null
+    use_dotnet_isolated_runtime = null
+    java_version                = null
+    node_version                = null
+    python_version              = null
+    powershell_core_version     = null
+    use_custom_runtime          = null
+  }
+  application_stack = merge(local.application_stack_struct, var.application_stack)
 }
 
 resource "azurerm_linux_function_app" "this" {
@@ -47,7 +57,13 @@ resource "azurerm_linux_function_app" "this" {
     ip_restriction                         = var.ip_restriction
     scm_ip_restriction                     = var.ip_restriction
     application_stack {
-      java_version = var.java_version
+      dotnet_version              = local.application_stack.dotnet_version
+      use_dotnet_isolated_runtime = local.application_stack.use_dotnet_isolated_runtime
+      java_version                = local.application_stack.java_version
+      node_version                = local.application_stack.node_version
+      python_version              = local.application_stack.python_version
+      powershell_core_version     = local.application_stack.powershell_core_version
+      use_custom_runtime          = local.application_stack.use_custom_runtime
     }
   }
   lifecycle {

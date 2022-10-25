@@ -9,7 +9,7 @@ output "id" {
 }
 
 output "identity" {
-  value       = azurerm_linux_function_app.this.identity.*
+  value       = azurerm_linux_function_app.this.identity[*]
   description = "Function app Managed Identity"
 }
 
