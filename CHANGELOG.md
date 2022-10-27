@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.4.0...v1.5.0) (2022-10-27)
+
+
+### Bug Fixes
+
+* define AzureFunctionsWebHost__hostid ([451f36e](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/451f36e7ac4a218a09fcf3896163362c858ba9d4))
+
+
+### Features
+
+* add user assigned identity ([ef848d8](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/ef848d8cff66ee18b3e10b7868db202421188a30))
+
 # [1.4.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.3.1...v1.4.0) (2022-10-25)
 
 
