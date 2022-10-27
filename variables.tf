@@ -105,3 +105,15 @@ variable "use_private_net" {
   description = "Use private network injection"
   default     = false
 }
+
+variable "identity_ids" {
+  type        = list(string)
+  description = "List of user assigned identity IDs"
+  default     = null
+}
+
+variable "enable_appinsights" {
+  type        = bool
+  description = "Enable application insights"
+  default     = true
+}

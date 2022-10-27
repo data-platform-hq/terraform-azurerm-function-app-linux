@@ -1,4 +1,5 @@
 resource "azurerm_application_insights" "this" {
+  count               = var.enable_appinsights ? 1 : 0
   name                = "fn-${var.project}-${var.env}-${var.location}-${var.name}"
   location            = var.location
   resource_group_name = var.resource_group
@@ -15,7 +16,7 @@ locals {
     WEBSITE_USE_PLACEHOLDER             = "0"
     AZURE_LOG_LEVEL                     = "info"
     AzureWebJobsDisableHomepage         = "true"
-    AzureFunctionsWebHost__hostid       = substr(azurerm_application_insights.this.name, -32, -1)
+    AzureFunctionsWebHost__hostid       = substr("fn-${var.project}-${var.env}-${var.location}-${var.name}", -32, -1)
   }
   application_stack_struct = {
     dotnet_version              = null
@@ -30,7 +31,6 @@ locals {
 }
 
 resource "azurerm_linux_function_app" "this" {
-  depends_on                    = [azurerm_application_insights.this]
   name                          = "fn-${var.project}-${var.env}-${var.location}-${var.name}"
   location                      = var.location
   resource_group_name           = var.resource_group
@@ -44,11 +44,12 @@ resource "azurerm_linux_function_app" "this" {
   tags                          = var.tags
   app_settings                  = merge(local.app_settings, var.app_settings)
   identity {
-    type = "SystemAssigned"
+    type         = var.identity_ids == null ? "SystemAssigned" : "SystemAssigned, UserAssigned"
+    identity_ids = var.identity_ids
   }
   site_config {
-    application_insights_connection_string = azurerm_application_insights.this.connection_string
-    application_insights_key               = azurerm_application_insights.this.instrumentation_key
+    application_insights_connection_string = var.enable_appinsights ? azurerm_application_insights.this[0].connection_string : null
+    application_insights_key               = var.enable_appinsights ? azurerm_application_insights.this[0].instrumentation_key : null
     always_on                              = true
     ftps_state                             = "Disabled"
     http2_enabled                          = true
