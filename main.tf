@@ -16,7 +16,7 @@ locals {
     WEBSITE_USE_PLACEHOLDER             = "0"
     AZURE_LOG_LEVEL                     = "info"
     AzureWebJobsDisableHomepage         = "true"
-    AzureFunctionsWebHost__hostid       = substr(azurerm_linux_function_app.this.name, -32, -1)
+    AzureFunctionsWebHost__hostid       = substr("fn-${var.project}-${var.env}-${var.location}-${var.name}", -32, -1)
   }
   application_stack_struct = {
     dotnet_version              = null
