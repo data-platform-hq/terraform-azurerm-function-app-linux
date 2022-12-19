@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.5.0...v1.6.0) (2022-12-19)
+
+
+### Features
+
+* added Log Analytics workspace parameter ([33a8a2e](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/33a8a2e3d9ea59e81fe91e6ae848ca9068c4cb0d))
+
 # [1.5.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.4.0...v1.5.0) (2022-10-27)
 
 
