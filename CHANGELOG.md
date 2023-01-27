@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.6.0...v1.7.0) (2023-01-27)
+
+
+### Bug Fixes
+
+* updated provider version ([a2f7aa0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/a2f7aa092ae88e34827a714c8d243a2545fa4146))
+
+
+### Features
+
+* added opportunity to enable Diagnostic setting ([db8c820](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/db8c8204600673d3a6f1f78e0cf83f5db7ef54bb))
+
 # [1.6.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.5.0...v1.6.0) (2022-12-19)
 
 
