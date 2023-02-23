@@ -34,6 +34,12 @@ variable "log_storage_name" {
   description = "Logs storage account name"
 }
 
+variable "log_storage_id" {
+  type        = string
+  description = "Logs storage account ID (to set permissions on it)"
+  default     = null
+}
+
 variable "name" {
   type        = string
   description = "Function index/name (like 007)"

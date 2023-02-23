@@ -108,6 +108,7 @@ resource "azurerm_linux_function_app" "this" {
   }
 }
 
+# TODO: deprecated
 resource "azurerm_role_assignment" "storage" {
   for_each             = { for permision in var.azure_rbac : "${permision.scope}-${permision.role}" => permision }
   scope                = each.value.scope
@@ -120,6 +121,37 @@ resource "azurerm_app_service_virtual_network_swift_connection" "this" {
   app_service_id = azurerm_linux_function_app.this.id
   subnet_id      = var.subnet_id
 }
+
+# Set of permissions based on documentation:
+# https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference
+resource "azurerm_role_assignment" "log_storage_account_contributor" {
+  count                = var.log_storage_id == null ? 0 : 1
+  scope                = var.log_storage_id
+  role_definition_name = "Storage Account Contributor"
+  principal_id         = azurerm_linux_function_app.this.identity[0].principal_id
+}
+
+resource "azurerm_role_assignment" "log_storage_account_blob_data_owner" {
+  count                = var.log_storage_id == null ? 0 : 1
+  scope                = var.log_storage_id
+  role_definition_name = "Storage Blob Data Owner"
+  principal_id         = azurerm_linux_function_app.this.identity[0].principal_id
+}
+
+resource "azurerm_role_assignment" "log_storage_account_queue_data_contributor" {
+  count                = var.log_storage_id == null ? 0 : 1
+  scope                = var.log_storage_id
+  role_definition_name = "Storage Queue Data Contributor"
+  principal_id         = azurerm_linux_function_app.this.identity[0].principal_id
+}
+
+resource "azurerm_role_assignment" "this" {
+  for_each             = { for permision in var.azure_rbac : "${permision.key}-${permision.role}" => permision }
+  scope                = each.value.scope
+  role_definition_name = each.value.role
+  principal_id         = each.value.principal_id
+}
+
 
 data "azurerm_function_app_host_keys" "this" {
   count               = var.use_private_net ? 0 : 1
