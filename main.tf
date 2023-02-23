@@ -145,14 +145,6 @@ resource "azurerm_role_assignment" "log_storage_account_queue_data_contributor" 
   principal_id         = azurerm_linux_function_app.this.identity[0].principal_id
 }
 
-resource "azurerm_role_assignment" "this" {
-  for_each             = { for permision in var.azure_rbac : "${permision.key}-${permision.role}" => permision }
-  scope                = each.value.scope
-  role_definition_name = each.value.role
-  principal_id         = each.value.principal_id
-}
-
-
 data "azurerm_function_app_host_keys" "this" {
   count               = var.use_private_net ? 0 : 1
   depends_on          = [azurerm_linux_function_app.this]
