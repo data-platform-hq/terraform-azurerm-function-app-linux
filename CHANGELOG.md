@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.7.0...v1.8.0) (2023-02-23)
+
+
+### Bug Fixes
+
+* remove copy-paste ([d7040c3](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/d7040c3c38d20c3e5638d09a024694a358893142))
+
+
+### Features
+
+* add storage account RBAC default configuration ([e5a69c6](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/e5a69c69b599ba74fcf442e7f55f685909592b6e))
+
 # [1.7.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.6.0...v1.7.0) (2023-01-27)
 
 
