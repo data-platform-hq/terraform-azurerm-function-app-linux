@@ -141,3 +141,13 @@ variable "enable_diagnostic_setting" {
   description = "Enable diagnostic setting. var.analytics_workspace_id must be provided"
   default     = false
 }
+
+variable "key_vault" {
+  description = "Configure Linux Function App to Key Vault"
+  type = object({
+    id                  = optional(string, null)
+    key_permissions     = optional(list(string), null)
+    secret_permissions  = optional(list(string), ["Get", "List"])
+    storage_permissions = optional(list(string), null)
+  })
+}
