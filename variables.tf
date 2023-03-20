@@ -150,4 +150,5 @@ variable "key_vault" {
     secret_permissions  = optional(list(string), ["Get", "List"])
     storage_permissions = optional(list(string), null)
   })
+  default = {}
 }
