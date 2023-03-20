@@ -108,6 +108,16 @@ resource "azurerm_linux_function_app" "this" {
   }
 }
 
+resource "azurerm_key_vault_access_policy" "this" {
+  count               = var.key_vault.id == null ? 0 : 1
+  key_vault_id        = var.key_vault.id
+  tenant_id           = azurerm_linux_function_app.this.identity[0].tenant_id
+  object_id           = azurerm_linux_function_app.this.identity[0].principal_id
+  key_permissions     = var.key_vault.key_permissions
+  secret_permissions  = var.key_vault.secret_permissions
+  storage_permissions = var.key_vault.storage_permissions
+}
+
 # TODO: deprecated
 resource "azurerm_role_assignment" "storage" {
   for_each             = { for permision in var.azure_rbac : "${permision.scope}-${permision.role}" => permision }
