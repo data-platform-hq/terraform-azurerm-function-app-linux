@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.8.0...v1.9.0) (2023-03-20)
+
+
+### Features
+
+* add KV access configuration ([bcd829c](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/bcd829c6102a73e32a141e28d65ee14eb1cdb9f7))
+
 # [1.8.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.7.0...v1.8.0) (2023-02-23)
 
 
