@@ -1,3 +1,11 @@
+## [1.9.1](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.9.0...v1.9.1) (2023-03-20)
+
+
+### Bug Fixes
+
+* kv default value ([58f8096](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/58f8096b7adf13407a26ea9538d06fc40114748d))
+* update readme ([eb63007](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/eb6300753f5d0ac3baeaf47a7513ce390cd25970))
+
 # [1.9.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.8.0...v1.9.0) (2023-03-20)
 
 
