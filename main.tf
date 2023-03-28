@@ -86,8 +86,46 @@ resource "azurerm_linux_function_app" "this" {
     http2_enabled                          = true
     websockets_enabled                     = false
     use_32_bit_worker                      = false
-    ip_restriction                         = var.ip_restriction
-    scm_ip_restriction                     = var.ip_restriction
+    dynamic "ip_restriction" {
+      for_each = var.ip_restriction
+      content {
+        name                      = ip_restriction.value.name
+        ip_address                = ip_restriction.value.ip_address
+        service_tag               = ip_restriction.value.service_tag
+        virtual_network_subnet_id = ip_restriction.value.virtual_network_subnet_id
+        priority                  = ip_restriction.value.priority
+        action                    = ip_restriction.value.action
+        dynamic "headers" {
+          for_each = ip_restriction.value.headers
+          content {
+            x_azure_fdid      = headers.value.x_azure_fdid
+            x_fd_health_probe = headers.value.x_fd_health_probe
+            x_forwarded_for   = headers.value.x_forwarded_for
+            x_forwarded_host  = headers.value.x_forwarded_host
+          }
+        }
+      }
+    }
+    dynamic "scm_ip_restriction" {
+      for_each = var.scm_ip_restriction
+      content {
+        name                      = scm_ip_restriction.value.name
+        ip_address                = scm_ip_restriction.value.ip_address
+        service_tag               = scm_ip_restriction.value.service_tag
+        virtual_network_subnet_id = scm_ip_restriction.value.virtual_network_subnet_id
+        priority                  = scm_ip_restriction.value.priority
+        action                    = scm_ip_restriction.value.action
+        dynamic "headers" {
+          for_each = scm_ip_restriction.value.headers
+          content {
+            x_azure_fdid      = headers.value.x_azure_fdid
+            x_fd_health_probe = headers.value.x_fd_health_probe
+            x_forwarded_for   = headers.value.x_forwarded_for
+            x_forwarded_host  = headers.value.x_forwarded_host
+          }
+        }
+      }
+    }
     application_stack {
       dotnet_version              = local.application_stack.dotnet_version
       use_dotnet_isolated_runtime = local.application_stack.use_dotnet_isolated_runtime
