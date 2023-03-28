@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.9.1...v1.10.0) (2023-03-28)
+
+
+### Bug Fixes
+
+* fix readme ([998b068](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/998b068df1435307e5591f3d00136b80ad5dcf8d))
+
+
+### Features
+
+* update firewall defaults ([3f48fc6](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/3f48fc6f4737a822d6b353c29db5a15efbc87a39))
+
 ## [1.9.1](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.9.0...v1.9.1) (2023-03-20)
 
 
