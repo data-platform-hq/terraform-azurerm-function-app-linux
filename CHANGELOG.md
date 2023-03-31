@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.10.0...v1.11.0) (2023-03-31)
+
+
+### Features
+
+* added worker_count parameter ([9fe054d](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/commit/9fe054d0353987ec9c514fcc2d83c004abcfcd7a))
+
 # [1.10.0](https://github.com/data-platform-hq/terraform-azurerm-function-app-linux/compare/v1.9.1...v1.10.0) (2023-03-28)
 
 
