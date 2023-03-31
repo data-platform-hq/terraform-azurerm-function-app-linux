@@ -86,6 +86,7 @@ resource "azurerm_linux_function_app" "this" {
     http2_enabled                          = true
     websockets_enabled                     = false
     use_32_bit_worker                      = false
+    worker_count                           = var.worker_count
     dynamic "ip_restriction" {
       for_each = var.ip_restriction
       content {

@@ -173,3 +173,9 @@ variable "key_vault" {
   })
   default = {}
 }
+
+variable "worker_count" {
+  type        = number
+  description = "Number of workers"
+  default     = null
+}
